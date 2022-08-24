@@ -1,0 +1,39 @@
+server:
+  port: 8025
+
+spring:
+  profiles:
+    active: test
+
+  application:
+    name: MovieTest
+
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:h2:mem:moviedb_intergation_test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;
+    name:
+    username: sa
+    password:
+    hikari:
+      auto-commit: false
+  jpa:
+    database: H2
+    open-in-view: false
+    show-sql: false
+    hibernate:
+      ddl-auto: 'create-drop'
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+    properties:
+      hibernate.id.new_generator_mappings: true
+
+  mvc:
+    favicon:
+      enabled: false
+  h2:
+    console:
+      enabled: true
+  data:
+    rest:
+      basePath: "/api/v1"

@@ -1,0 +1,19 @@
+<div class="bg-light">
+  <app-header></app-header>
+  <movie-banner [movies]="bannerMovies"></movie-banner>
+  <div class="container">
+    <app-tabset (changedTab)="onChangedTab($event)"></app-tabset>
+    <div
+      class="my-3"
+      infinite-scroll
+      (scrolled)="loadPage(page + 1)"
+      [infiniteScrollDisabled]="page >= totalPages"
+      [infiniteScrollDistance]="0"
+    >
+      <app-movie-grid [movies]="movies"></app-movie-grid>
+      <div class="p-5" *ngIf="!(page >= totalPages)">
+        <movie-loading class="d-flex justify-content-center"></movie-loading>
+      </div>
+    </div>
+  </div>
+</div>

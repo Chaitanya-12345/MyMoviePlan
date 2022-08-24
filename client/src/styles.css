@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  overflow: auto;
+}
+
+.lighting-button:hover {
+  box-shadow: 0 0 7px #fff;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.carousel-indicators li {
+  width: 40px !important;
+  height: 10px !important;
+  border-radius: 5px !important;
+}
+
+.carousel-indicators .active {
+  background-color: #ff0079;
+}
+
+.spinner-border-icon {
+  width: 20px !important;
+  height: 20px !important;
+}
